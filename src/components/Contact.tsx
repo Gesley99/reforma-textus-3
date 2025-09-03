@@ -123,7 +123,7 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="pages">Número de páginas</Label>Número de páginas</Label>
+                    <Label htmlFor="pages">Número de páginas</Label>
                     <Input
                       id="pages"
                       name="pages"
@@ -132,7 +132,7 @@ const Contact = () => {
                       placeholder="Ex.: 10"
                       className="focus:ring-2 focus:ring-primary"
                       value={formData.pages}
-                      onChange={(e) = name="pages"> handleInputChange("pages", e.target.value)}
+                      onChange={(e) => handleInputChange("pages", e.target.value)}
                       required
                     />
                   </div>
