@@ -63,6 +63,11 @@ const Contact = () => {
                   </p>
                   {/* Espelha o valor do Select controlado pelo React */}
                   <input type="hidden" name="service" value={formData.service} />
+                  {/* espelhos com os MESMOS nomes para garantir inclusão no e-mail */}
+                  <input type="hidden" name="pages" value={formData.pages} />
+                  <input type="hidden" name="deadline_time" value={formData.deadline_time} />
+                  <input type="hidden" name="__mirror_pages" value={formData.pages} />
+                  <input type="hidden" name="__mirror_deadline_time" value={formData.deadline_time} />
                   <input type="hidden" name="pages_hidden" value={formData.pages} />
                   <input type="hidden" name="deadline_time_hidden" value={formData.deadline_time} />
                   <input type="hidden" name="pages_hidden" value={formData.pages} />
