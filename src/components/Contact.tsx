@@ -65,6 +65,8 @@ const Contact = () => {
                   <input type="hidden" name="service" value={formData.service} />
                   <input type="hidden" name="pages_hidden" value={formData.pages} />
                   <input type="hidden" name="deadline_time_hidden" value={formData.deadline_time} />
+                  <input type="hidden" name="pages_hidden" value={formData.pages} />
+                  <input type="hidden" name="deadline_time_hidden" value={formData.deadline_time} />
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
@@ -124,7 +126,7 @@ const Contact = () => {
                   <div className="space-y-2">
                     <Label htmlFor="pages">Número de páginas</Label>
                     <Input
-                      id="pages"
+                      id="pages" name="pages"
                       name="pages"
                       type="number"
                       min={1}
@@ -165,6 +167,18 @@ const Contact = () => {
                       value={formData.deadline}
                       onChange={(e) => handleInputChange("deadline", e.target.value)}
                       required
+                    />
+                  </div>
+
+                  <div className="space-y-2 mt-4">
+                    <Label htmlFor="deadline_time">Horário (opcional)</Label>
+                    <Input
+                      id="deadline_time"
+                      name="deadline_time"
+                      type="time"
+                      className="focus:ring-2 focus:ring-primary"
+                      value={formData.deadline_time}
+                      onChange={(e) => handleInputChange("deadline_time", e.target.value)}
                     />
                   </div>
 
