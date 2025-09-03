@@ -14,16 +14,20 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* Floating WhatsApp Button (right-fixed) */}
+      {/* WhatsApp Button (right-fixed, animated) */}
       <a
         href="https://wa.me/61996212692"
         target="_blank"
         rel="noreferrer"
-        className="fixed right-4 top-1/2 -translate-y-1/2 z-50 rounded-full shadow-glow bg-[hsl(var(--secondary))] text-secondary-foreground w-12 h-12 flex items-center justify-center text-base font-medium hover:opacity-90 transition"
+        className="group fixed right-4 top-1/2 -translate-y-1/2 z-50 rounded-full shadow-glow bg-[hsl(var(--secondary))] text-secondary-foreground h-12 flex items-center justify-center text-sm font-medium transition-all hover:-translate-x-2"
         aria-label="Fale no WhatsApp"
         title="Fale no WhatsApp"
+        style={{ width: "3rem" }}
       >
-        WA
+        <span className="px-4 hidden group-hover:inline whitespace-nowrap">
+          Solicite seu trabalho pelo nosso WhatsApp
+        </span>
+        <span className="w-12 inline-flex items-center justify-center">WP</span>
       </a>
       <BrowserRouter>
         <Routes>

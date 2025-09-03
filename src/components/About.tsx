@@ -6,7 +6,7 @@ const stats = [
   {
     icon: BookOpen,
     number: "5000+",
-    label: "Atendimentos/Orientações Concluídas",
+    label: "Trabalhos Entregues",
     color: "text-primary"
   },
   {

@@ -59,7 +59,7 @@ const Hero = () => {
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 animate-slide-up max-w-3xl mx-auto text-balance">
-            Excelência em orientação acadêmica. Transformamos ansiedade em método: mentoria, normalização e revisão crítica.
+            Excelência em trabalhos acadêmicos. Transformamos suas ideias em pesquisas de qualidade superior.
           </p>
           
           {/* Features Grid */}
@@ -74,7 +74,7 @@ const Hero = () => {
             </div>
             <div className="flex items-center justify-center gap-3 text-primary-foreground/80">
               <ArrowRight className="w-6 h-6 text-secondary" />
-              <span className="font-medium">Acompanhamento até a banca</span>
+              <span className="font-medium">Entrega no Prazo</span>
             </div>
           </div>
           

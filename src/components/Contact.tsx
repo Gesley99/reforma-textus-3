@@ -10,11 +10,10 @@ import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", course: "", pages: "",
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", course: "", pages: "", min_pages: "", max_pages: "", tema: "",
     service: "",
     deadline: "",
-    message: "",
-    deadline_time: ""
+    message: ""
   });
 
   const handleInputChange = (field: string, value: string) => {
@@ -54,7 +53,7 @@ const Contact = () => {
                   netlify-honeypot="bot-field"
                   action="/obrigado"
                   className="form"
-                >
+                 name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                   {/* Necessário para Netlify identificar o formulário */}
                   <input type="hidden" name="form-name" value="contact" />
                   {/* Honeypot anti-spam (oculto por CSS) */}
@@ -62,23 +61,14 @@ const Contact = () => {
                     <label>Não preencha: <input name="bot-field" /></label>
                   </p>
                   {/* Espelha o valor do Select controlado pelo React */}
-                  <input type="hidden" name="service" value={formData.service} />
-                  {/* espelhos com os MESMOS nomes para garantir inclusão no e-mail */}
-                  <input type="hidden" name="pages" value={formData.pages} />
-                  <input type="hidden" name="deadline_time" value={formData.deadline_time} />
-                  <input type="hidden" name="__mirror_pages" value={formData.pages} />
-                  <input type="hidden" name="__mirror_deadline_time" value={formData.deadline_time} />
-                  <input type="hidden" name="pages_hidden" value={formData.pages} />
-                  <input type="hidden" name="deadline_time_hidden" value={formData.deadline_time} />
-                  <input type="hidden" name="pages_hidden" value={formData.pages} />
-                  <input type="hidden" name="deadline_time_hidden" value={formData.deadline_time} />
+                  <input type="hidden" name="Serviço" value={formData.service} />
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Nome Completo</Label>
                       <Input
                         id="name"
-                        name="name"
+                        name="Nome"
                         placeholder="Seu nome completo"
                         className="focus:ring-2 focus:ring-primary"
                         value={formData.name}
@@ -91,7 +81,7 @@ const Contact = () => {
                       <Label htmlFor="email">E-mail</Label>
                       <Input
                         id="email"
-                        name="email"
+                        name="E-mail"
                         type="email"
                         placeholder="seu@email.com"
                         className="focus:ring-2 focus:ring-primary"
@@ -107,7 +97,7 @@ const Contact = () => {
                       <Label htmlFor="phone">Telefone</Label>
                       <Input
                         id="phone"
-                        name="phone"
+                        name="Telefone"
                         placeholder="(11) 99999-9999"
                         className="focus:ring-2 focus:ring-primary"
                         value={formData.phone}
@@ -119,7 +109,7 @@ const Contact = () => {
                     <Label htmlFor="course">Curso</Label>
                     <Input
                       id="course"
-                      name="course"
+                      name="Curso"
                       placeholder="Ex.: Direito, Enfermagem, Eng. de Produção"
                       className="focus:ring-2 focus:ring-primary"
                       value={formData.course}
@@ -129,16 +119,21 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="pages">Número de páginas</Label>
-                    <Input
-                      id="pages" name="pages"
-                      name="pages"
-                      type="number"
-                      min={1}
-                      placeholder="Ex.: 10"
-                      className="focus:ring-2 focus:ring-primary"
-                      value={formData.pages}
-                      onChange={(e) => handleInputChange("pages", e.target.value)}
+                    <Label htmlFor="tema">Tema</Label>
+                    <Input id="tema" name="Tema" type="text" placeholder="Ex.: Educação e tecnologia" className="focus:ring-2 focus:ring-primary" value={formData.tema} onChange={(e) => handleInputChange("tema", e.target.value)} />
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <Label htmlFor="min_pages">Páginas (mín.)</Label>
+                        <Input id="min_pages" name="Páginas (mín.)" type="number" min={1} placeholder="Ex.: 10" className="focus:ring-2 focus:ring-primary" value={formData.min_pages} onChange={(e) => handleInputChange("min_pages", e.target.value)} required />
+                      </div>
+                      <div>
+                        <Label htmlFor="max_pages">Páginas (máx.)</Label>
+                        <Input id="max_pages" name="Páginas (máx.)" type="number" min={1} placeholder="Ex.: 15" className="focus:ring-2 focus:ring-primary" value={formData.max_pages} onChange={(e) => handleInputChange("max_pages", e.target.value)} required />
+                      </div>
+                    </div> handleInputChange("pages", e.target.value)}
                       required
                     />
                   </div>
@@ -166,7 +161,7 @@ const Contact = () => {
                     <Label htmlFor="deadline">Prazo Desejado</Label>
                     <Input
                       id="deadline"
-                      name="deadline"
+                      name="Prazo final"
                       type="date"
                       className="focus:ring-2 focus:ring-primary"
                       value={formData.deadline}
@@ -176,22 +171,10 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2 mt-4">
-                    <Label htmlFor="deadline_time">Horário (opcional)</Label>
-                    <Input
-                      id="deadline_time"
-                      name="deadline_time"
-                      type="time"
-                      className="focus:ring-2 focus:ring-primary"
-                      value={formData.deadline_time}
-                      onChange={(e) => handleInputChange("deadline_time", e.target.value)}
-                    />
-                  </div>
-
-                  <div className="space-y-2 mt-4">
                     <Label htmlFor="message">Detalhes do Projeto</Label>
                     <Textarea
                       id="message"
-                      name="message"
+                      name="Mensagem"
                       placeholder="Descreva seu projeto, requisitos específicos, número de páginas estimado..."
                       className="min-h-32 focus:ring-2 focus:ring-primary"
                       value={formData.message}

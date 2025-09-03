@@ -3,58 +3,42 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, FileText, GraduationCap, Users, Clock, CheckCircle } from "lucide-react";
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
-function getDialogBullets(title: string): string[] {
-  switch (title) {
-    case "Mentoria para TCC e Monografias":
-      return ["Delimitação do tema e objetivos", "Roteiro e cronograma por etapas", "Normalização ABNT e revisão orientativa"];
-    case "Criação de Slides Acadêmicos":
-      return ["Roteiro visual e padronização", "Slides prontos para banca", "Orientações de apresentação e tempo"];
-    case "Apresentações & Pitch":
-      return ["Roteiro de fala", "Simulação com feedback", "Checklist de tempo e impacto"];
-    case "Revisão, Normalização & Checagem de Citações":
-      return ["Revisão gramatical e estilo", "ABNT/Vancouver/APA e referências", "Correções comentadas para aprendizado"];
-    default:
-      return [];
-  }
-}
-
-
 const services = [
   {
     icon: GraduationCap,
-    title: "Mentoria para TCC e Monografias",
-    description: "Acompanhamento passo a passo na estruturação, redação e normalização do seu TCC/monografia.",
-    features: ["Delimitação de tema", "Roteiro e cronograma", "Normalização ABNT", "Revisão crítica"],
+    title: "TCC & Monografias",
+    description: "Trabalhos de conclusão de curso desenvolvidos com rigor metodológico e originalidade.",
+    features: ["Pesquisa aprofundada", "Formatação ABNT", "Revisão completa"],
   },
   {
     icon: FileText,
-    title: "Orientação para Projetos de Extensão",
-    description: "Planejamento e acompanhamento de projetos extensionistas, com orientação sobre objetivos, indicadores e relatórios.",
-    features: ["Objetivos e indicadores", "Plano de ação", "Modelos de relatório"],
+    title: "Projetos de Extensão",
+    description: "Atividades acadêmicas aplicadas à comunidade, com foco em impacto social e formação prática.",
+    features: ["Planejamento estruturado", "Objetivos definidos", "Resultados transformadores"],
   },
   {
     icon: BookOpen,
-    title: "Mentoria para Artigos Científicos",
-    description: "Mentoria para redação e submissão de artigos científicos, do esboço à resposta de pareceres.",
+    title: "Artigos Científicos",
+    description: "Elaboração de artigos científicos de qualidade.",
     features: ["Produção de textos acadêmicos originais", "Referências atualizadas conforme a área", "Estruturação segundo normas científicas"],
   },
   {
     icon: Users,
-    title: "Criação de Slides Acadêmicos",
-    description: "Design e narrativa para apresentações acadêmicas (TCC, bancas, seminários e resultados de pesquisa).",
-    features: ["Roteiro visual e storytelling", "Padronização de layout e tipografia", "Exportação pronta para apresentação"],
+    title: "Trabalhos em Grupo",
+    description: "Projetos colaborativos e trabalhos multidisciplinares.",
+    features: ["Coordenação de equipe", "Prazos organizados", "Qualidade unificada"],
   },
   {
     icon: Clock,
-    title: "Apresentações & Pitch",
-    description: "Treinamento para defesa/apresentação: roteiro, ensaio com feedback e estratégias de tempo.",
-    features: ["Roteiro de defesa", "Simulação de banca com feedback", "Checklist de tempo e impacto"],
+    title: "Relatório de Estágio",
+    description: "Orientação completa para Relatório de Estágio: estrutura, padrões institucionais e evidências.",
+    features: ["Estruturação por objetivos e atividades", "Adequação a normas institucionais", "Revisão orientativa do texto"],
   },
   {
     icon: CheckCircle,
-    title: "Revisão, Normalização & Checagem de Citações",
-    description: "Revisão acadêmica e gramatical, normalização ABNT/Vancouver/APA e checagem de referências.",
-    features: ["Correção ortográfica", "Adequação ABNT/Vancouver/APA", "Melhoria textual"],
+    title: "Revisão & Formatação",
+    description: "Aperfeiçoamento de trabalhos já desenvolvidos.",
+    features: ["Correção ortográfica", "Adequação ABNT", "Melhoria textual"],
   },
 ];
 
@@ -100,30 +84,14 @@ const Services = () => {
                   
 
 <div className="pt-4">
-  {service.title === "Mentoria para TCC e Monografias" ? (
+  {service.title === "Projetos de Extensão" ? (
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="hero" className="w-full">Saiba Mais</Button>
       </DialogTrigger>
       <DialogContent className="max-w-xl">
         <DialogHeader>
-          <DialogTitle>Mentoria para TCC e Monografias — Como funciona</DialogTitle>
-          <DialogDescription></DialogDescription>
-        </DialogHeader>
-        <div className="space-y-4 text-foreground">
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Delimitação do tema e objetivos</li>\n            <li>Roteiro e cronograma por etapas</li>\n            <li>Normalização ABNT e revisão orientativa</li>\n          </ul>
-        </div>
-      </DialogContent>
-    </Dialog>
-) : service.title === "Orientação para Projetos de Extensão" ? (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="hero" className="w-full">Saiba Mais</Button>
-      </DialogTrigger>
-      <DialogContent className="max-w-xl">
-        <DialogHeader>
-          <DialogTitle>Orientação para Projetos de Extensão — Como funciona</DialogTitle>
+          <DialogTitle>Projetos de Extensão — Como funciona</DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
         <div className="space-y-6 text-foreground">
@@ -153,14 +121,14 @@ const Services = () => {
         </div>
       </DialogContent>
     </Dialog>
-  ) : service.title === "Mentoria para Artigos Científicos" ? (
+  ) : service.title === "Artigos Científicos" ? (
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="hero" className="w-full">Saiba Mais</Button>
       </DialogTrigger>
       <DialogContent className="max-w-xl">
         <DialogHeader>
-          <DialogTitle>Mentoria para Artigos Científicos — Como funciona</DialogTitle>
+          <DialogTitle>Artigos Científicos — Como funciona</DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
         <div className="space-y-6 text-foreground">
