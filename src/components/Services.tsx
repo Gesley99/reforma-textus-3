@@ -3,6 +3,22 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, FileText, GraduationCap, Users, Clock, CheckCircle } from "lucide-react";
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
+function getDialogBullets(title: string): string[] {
+  switch (title) {
+    case "Mentoria para TCC e Monografias":
+      return ["Delimitação do tema e objetivos", "Roteiro e cronograma por etapas", "Normalização ABNT e revisão orientativa"];
+    case "Criação de Slides Acadêmicos":
+      return ["Roteiro visual e padronização", "Slides prontos para banca", "Orientações de apresentação e tempo"];
+    case "Apresentações & Pitch":
+      return ["Roteiro de fala", "Simulação com feedback", "Checklist de tempo e impacto"];
+    case "Revisão, Normalização & Checagem de Citações":
+      return ["Revisão gramatical e estilo", "ABNT/Vancouver/APA e referências", "Correções comentadas para aprendizado"];
+    default:
+      return [];
+  }
+}
+
+
 const services = [
   {
     icon: GraduationCap,

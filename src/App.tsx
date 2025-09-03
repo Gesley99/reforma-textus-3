@@ -14,6 +14,17 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      {/* Floating WhatsApp Button (right-fixed) */}
+      <a
+        href="https://wa.me/61996212692"
+        target="_blank"
+        rel="noreferrer"
+        className="fixed right-4 top-1/2 -translate-y-1/2 z-50 rounded-full shadow-glow bg-[hsl(var(--secondary))] text-secondary-foreground w-12 h-12 flex items-center justify-center text-base font-medium hover:opacity-90 transition"
+        aria-label="Fale no WhatsApp"
+        title="Fale no WhatsApp"
+      >
+        WA
+      </a>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
