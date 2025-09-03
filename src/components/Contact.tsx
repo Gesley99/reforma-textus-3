@@ -13,7 +13,8 @@ const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", course: "", pages: "",
     service: "",
     deadline: "",
-    message: ""
+    message: "",
+    deadline_time: ""
   });
 
   const handleInputChange = (field: string, value: string) => {
@@ -62,6 +63,8 @@ const Contact = () => {
                   </p>
                   {/* Espelha o valor do Select controlado pelo React */}
                   <input type="hidden" name="service" value={formData.service} />
+                  <input type="hidden" name="pages_hidden" value={formData.pages} />
+                  <input type="hidden" name="deadline_time_hidden" value={formData.deadline_time} />
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
@@ -116,10 +119,6 @@ const Contact = () => {
                       onChange={(e) => handleInputChange("course", e.target.value)}
                       required
                     />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="deadline_time">Horário (opcional)</Label>
-                    <Input type="time" id="deadline_time" name="deadline_time" />
                   </div>
 
                   <div className="space-y-2">

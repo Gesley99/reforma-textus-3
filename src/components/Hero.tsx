@@ -59,7 +59,7 @@ const Hero = () => {
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 animate-slide-up max-w-3xl mx-auto text-balance">
-            Excelência em orientação acadêmica. Transformamos ansiedade em método: mentoria, normalização ABNT e revisão crítica.
+            Excelência em orientação acadêmica. Transformamos ansiedade em método: mentoria, normalização e revisão crítica.
           </p>
           
           {/* Features Grid */}
@@ -86,7 +86,7 @@ const Hero = () => {
               className="text-lg px-8 py-6"
               onClick={() => window.open('https://wa.me/61996212692','_blank')}
             >
-              Solicitar Orçamentototo
+              Solicitar Orçamentoto
               <ArrowRight className="w-5 h-5" />
             </Button>
             <Button variant="academic" size="lg" className="text-lg px-8 py-6 bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/20">

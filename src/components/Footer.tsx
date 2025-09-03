@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { BookOpen, Mail, MapPin, Instagram } from "lucide-react";
 const Footer = () => {
   return <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}

@@ -20,7 +20,7 @@ const services = [
     icon: BookOpen,
     title: "Mentoria para Artigos Científicos",
     description: "Mentoria para redação e submissão de artigos científicos, do esboço à resposta de pareceres.",
-    features: ["Estrutura lógica do artigo", "Mapa de argumentos", "Referências atualizadas conforme a área", "Estruturação segundo normas científicas"],
+    features: ["Produção de textos acadêmicos originais", "Referências atualizadas conforme a área", "Estruturação segundo normas científicas"],
   },
   {
     icon: Users,
@@ -37,7 +37,7 @@ const services = [
   {
     icon: CheckCircle,
     title: "Revisão, Normalização & Checagem de Citações",
-    description: "Revisão acadêmica e gramatical, normalização ABNT/Vancouver e checagem de referências.",
+    description: "Revisão acadêmica e gramatical, normalização ABNT/Vancouver/APA e checagem de referências.",
     features: ["Correção ortográfica", "Adequação ABNT/Vancouver/APA", "Melhoria textual"],
   },
 ];
@@ -84,7 +84,23 @@ const Services = () => {
                   
 
 <div className="pt-4">
-  {service.title === "Orientação para Projetos de Extensão" ? (
+  {service.title === "Mentoria para TCC e Monografias" ? (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="hero" className="w-full">Saiba Mais</Button>
+      </DialogTrigger>
+      <DialogContent className="max-w-xl">
+        <DialogHeader>
+          <DialogTitle>Mentoria para TCC e Monografias — Como funciona</DialogTitle>
+          <DialogDescription></DialogDescription>
+        </DialogHeader>
+        <div className="space-y-4 text-foreground">
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Delimitação do tema e objetivos</li>\n            <li>Roteiro e cronograma por etapas</li>\n            <li>Normalização ABNT e revisão orientativa</li>\n          </ul>
+        </div>
+      </DialogContent>
+    </Dialog>
+) : service.title === "Orientação para Projetos de Extensão" ? (
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="hero" className="w-full">Saiba Mais</Button>
@@ -96,26 +112,26 @@ const Services = () => {
         </DialogHeader>
         <div className="space-y-6 text-foreground">
           <div>
-            <h4 className="font-semibold mb-2">Como orientamos</h4>
+            <h4 className="font-semibold mb-2">O que fazemos</h4>
             <ul className="list-disc pl-5 space-y-1">
-              <li>Oferecemos modelos e roteiros para estruturar o projeto conforme as diretrizes acadêmicas.</li>
-              <li>Ajudamos a definir cronograma e metodologia; fornecemos checklists e templates.</li>
-              <li>Orientamos sobre instrumentos de coleta de dados e boas práticas.</li>
+              <li>Estruturamos o projeto conforme as diretrizes acadêmicas.</li>
+              <li>Elaboramos cronograma, metodologia e relatórios.</li>
+              <li>Orientamos sobre instrumentos de coleta de dados.</li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-2">Limites do serviço (ética)</h4>
+            <h4 className="font-semibold mb-2">O que não fazemos</h4>
             <ul className="list-disc pl-5 space-y-1">
-              <li>Não produzimos textos em nome do aluno e não realizamos coleta de dados em seu lugar.</li>
-              <li>Não executamos atividades de campo nem assinamos autoria pelo aluno.</li>
-              <li>Essas ações são de responsabilidade do estudante e/ou sua equipe.</li>
+              <li>Não coletamos fotos, dados pessoais ou entrevistas.</li>
+              <li>Não executamos atividades de campo.</li>
+              <li>Essas ações ficam sob responsabilidade da equipe do aluno.</li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-2">Você recebe</h4>
+            <h4 className="font-semibold mb-2">Entregamos</h4>
             <ul className="list-disc pl-5 space-y-1">
-              <li>Modelos, referências e comentários detalhados no documento do projeto.</li>
-              <li>Cronograma sugerido e checklists de etapas.</li>
+              <li>Documento do projeto.</li>
+              <li>Cronograma básico.</li>
             </ul>
           </div>
         </div>
@@ -178,11 +194,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-    
-      {/* Fallback modal description (genérico) */}
-      {/* Os serviços sem diálogo específico usam esta descrição */}
     </section>
-    
   );
 };
 
