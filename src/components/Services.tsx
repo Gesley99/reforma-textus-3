@@ -20,25 +20,25 @@ const services = [
     icon: BookOpen,
     title: "Mentoria para Artigos Científicos",
     description: "Mentoria para redação e submissão de artigos científicos, do esboço à resposta de pareceres.",
-    features: ["Estrutura IMRyD", "Mapa de argumentos", "Referências atualizadas conforme a área", "Estruturação segundo normas científicas"],
+    features: ["Estrutura lógica do artigo", "Mapa de argumentos", "Referências atualizadas conforme a área", "Estruturação segundo normas científicas"],
   },
   {
     icon: Users,
-    title: "Orientação para Trabalhos em Grupo",
-    description: "Organização e orientação de trabalhos colaborativos, divisão de tarefas e integração de capítulos.",
-    features: ["Plano de divisão de capítulos", "Guidelines de escrita", "Revisão de coesão"],
+    title: "Criação de Slides Acadêmicos",
+    description: "Design e narrativa para apresentações acadêmicas (TCC, bancas, seminários e resultados de pesquisa).",
+    features: ["Roteiro visual e storytelling", "Padronização de layout e tipografia", "Exportação pronta para apresentação"],
   },
   {
     icon: Clock,
-    title: "Plantão de Mentoria",
-    description: "Atendimento emergencial para dúvidas, revisão orientativa e normalização de última hora.",
-    features: ["Plantão tira-dúvidas", "Revisão orientativa", "Comunicação direta"],
+    title: "Apresentações & Pitch",
+    description: "Treinamento para defesa/apresentação: roteiro, ensaio com feedback e estratégias de tempo.",
+    features: ["Roteiro de defesa", "Simulação de banca com feedback", "Checklist de tempo e impacto"],
   },
   {
     icon: CheckCircle,
     title: "Revisão, Normalização & Checagem de Citações",
     description: "Revisão acadêmica e gramatical, normalização ABNT/Vancouver e checagem de referências.",
-    features: ["Correção ortográfica", "Adequação ABNT", "Melhoria textual"],
+    features: ["Correção ortográfica", "Adequação ABNT/Vancouver/APA", "Melhoria textual"],
   },
 ];
 
@@ -178,7 +178,11 @@ const Services = () => {
           </div>
         </div>
       </div>
+    
+      {/* Fallback modal description (genérico) */}
+      {/* Os serviços sem diálogo específico usam esta descrição */}
     </section>
+    
   );
 };
 

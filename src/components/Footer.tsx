@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { BookOpen, Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
 const Footer = () => {
   return <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
@@ -28,10 +27,8 @@ const Footer = () => {
                 <Instagram className="w-4 h-4" />
               </Button>
               <Button variant="ghost" size="icon" className="w-8 h-8 text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10">
-                <Facebook className="w-4 h-4" />
               </Button>
               <Button variant="ghost" size="icon" className="w-8 h-8 text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10">
-                <Linkedin className="w-4 h-4" />
               </Button>
             </div>
           </div>

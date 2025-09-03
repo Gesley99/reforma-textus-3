@@ -86,7 +86,7 @@ const Hero = () => {
               className="text-lg px-8 py-6"
               onClick={() => window.open('https://wa.me/61996212692','_blank')}
             >
-              Agendar Diagnósticoto
+              Solicitar Orçamentototo
               <ArrowRight className="w-5 h-5" />
             </Button>
             <Button variant="academic" size="lg" className="text-lg px-8 py-6 bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/20">
