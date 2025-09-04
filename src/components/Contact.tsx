@@ -133,9 +133,6 @@ const Contact = () => {
                         <Label htmlFor="max_pages">Páginas (máx.)</Label>
                         <Input id="max_pages" name="Páginas (máx.)" type="number" min={1} placeholder="Ex.: 15" className="focus:ring-2 focus:ring-primary" value={formData.max_pages} onChange={(e) => handleInputChange("max_pages", e.target.value)} required />
                       </div>
-                    </div> handleInputChange("pages", e.target.value)}
-                      required
-                    />
                   </div>
         
 
